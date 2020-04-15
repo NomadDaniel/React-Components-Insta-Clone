@@ -1,5 +1,5 @@
 // You will add code in this file
-import React, { useState } from "react"
+import React from "react"
 import CommentSection from "../CommentSection/CommentSectionContainer"
 import LikeSection from "./LikeSection"
 import PostHeader from "./PostHeader"
@@ -12,13 +12,7 @@ import "./Posts.css";
 const Post = props => {
   // set up state for the likes
 
-const [likes, setLikes] = useState(props.post.likes)  
-
-const likeCounter = function(unliked){
-    unliked +=1;
-  }
-  
-  return (
+ return (
     <div className="post-border">
       <PostHeader
         username={props.post.username}
@@ -33,7 +27,7 @@ const likeCounter = function(unliked){
           src={props.post.imageUrl}
         />
       </div>
-      <LikeSection likes = {props.post.likes} setLikes = {likeCounter}/>
+      <LikeSection likes = {props.post.likes}/>
       <CommentSection
         postId={props.post.imageUrl}
         comments={props.post.comments}
